@@ -25,7 +25,7 @@ function createBookmark({ target }) {
 
     const url = button.getAttribute("data-clipboard-text");
     const number = url.split("/").pop();
-    const title = `PSL #${number}. ${document.querySelector("h3").textContent}`;
+    const title = `#${number}. ${document.querySelector("h3").textContent}`;
 
     const bookmark = { parentId: "1", title, url };
     chrome.runtime.sendMessage({ bookmark }, (response) => {});
